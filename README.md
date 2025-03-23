@@ -6,9 +6,9 @@
 
 这是爱特工作室 24 届合作项目，本项目团队一共 9 人，目标是使用 Django 写一个博客论坛(类似[博客园](https://www.cnblogs.com/))网站
 
-其中 main 分支作为主分支，是 Django 项目的本体
+其中 main 分支作为主分支，是 Django 项目的本体，程序部负责
 
-homepage 分支用于存储模板文件
+homepage 分支用于存储模板文件，Web 部和 UI 部负责
 
 ## 🧐 如何贡献
 
