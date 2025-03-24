@@ -11,10 +11,14 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MEDIA_ROOT = os.path.join(BASE_DIR, '_images')
+
+MEDIA_URL = '/_images/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -25,8 +29,11 @@ SECRET_KEY = 'django-insecure-)vv_e)0uhp597wesg9)6a0%v6*!al!2*uxg=1@@g*vwf8sc@0h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
+CAPTCHA_IMAGE_SIZE = (80, 45)   # 设置 captcha 图片大小
+CAPTCHA_LENGTH = 4   # 字符个数
+CAPTCHA_TIMEOUT = 1   # 超时(minutes)
 
 # Application definition
 
@@ -37,6 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
+    'pages',
+    'imagekit',
+    'captcha',
 ]
 
 MIDDLEWARE = [
