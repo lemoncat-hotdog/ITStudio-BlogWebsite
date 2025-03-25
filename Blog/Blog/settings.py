@@ -31,9 +31,23 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# captcha 设置
 CAPTCHA_IMAGE_SIZE = (80, 45)   # 设置 captcha 图片大小
 CAPTCHA_LENGTH = 4   # 字符个数
 CAPTCHA_TIMEOUT = 1   # 超时(minutes)
+
+# 邮件配置
+EMAIL_HOST = 'smtp.163.com'  # 163 邮箱的 SMTP 服务器地址
+EMAIL_PORT = 465  # 163 邮箱的 SMTP 端口（SSL）
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'm17866819721@163.com'  # 你的邮箱地址
+EMAIL_FROM = 'm17866819721@163.com'  # 你的邮箱地址
+EMAIL_HOST_PASSWORD = 'ZQyMCfswEXKWjGAp'  # 你的邮箱密钥（授权码）
+email_title = '邮箱激活'
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 10485760
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 
@@ -114,9 +128,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

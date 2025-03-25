@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://img.fastmirror.net/s/2024/08/16/66bf44708b1e7.png">
-    <title>登录 - OUC电商</title>
+    <title>注册 - OUC电商</title>
     <style>
         body {
             font-family: 'Microsoft YaHei', Arial, sans-serif;
@@ -18,7 +18,7 @@
         /* 左侧背景区域 */
         .left-container {
             flex: 1;
-            background: url('../../_images/background.jpg') no-repeat center center;
+            background: url('../../_images/background1.jpg') no-repeat center center;
             background-size: cover;
             display: flex;
             flex-direction: column;
@@ -30,7 +30,7 @@
             padding: 2rem;
         }
 
-        /* 右侧登录区域 */
+        /* 右侧注册区域 */
         .right-container {
             flex: 1;
             display: flex;
@@ -40,7 +40,7 @@
             padding: 2rem;
         }
 
-        .login-container {
+        .register-container {
             background-color: #ffffff;
             padding: 2rem;
             border-radius: 12px;
@@ -58,6 +58,7 @@
 
         input[type="text"],
         input[type="password"],
+        input[type="email"],
         input[type="submit"] {
             width: 100%;
             padding: 0.9rem;
@@ -69,7 +70,8 @@
         }
 
         input[type="text"]:focus,
-        input[type="password"]:focus {
+        input[type="password"]:focus,
+        input[type="email"]:focus {
             border-color: #007bff;
             box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
             outline: none;
@@ -152,42 +154,37 @@
 <!-- 左侧背景 -->
 <div class="left-container">
     <h2>欢迎来到 OUC 电商平台</h2>
-    <p>专注优质商品长达30毫秒。</p>
+    <p>专注优质商品与卓越购物体验，为您提供最贴心的服务。</p>
 </div>
 
-<!-- 右侧登录表单 -->
+<!-- 右侧注册表单 -->
 <div class="right-container">
-    <div class="login-container">
+    <div class="register-container">
         <form action="" method="post">
-            <h1>登录</h1>
+            <h1>注册</h1>
             {% csrf_token %}
 
-            <!-- 用户名输入框 -->
-            <input type="text" name="account" placeholder="请输入用户名或邮箱" required>
+            <!-- 输入框 -->
+            {{ reg_form.as_p }}
 
-            <!-- 密码输入框 -->
-            <input type="password" name="password" placeholder="请输入密码" required>
-
-            <!-- 验证码输入框和刷新功能 -->
             <div class="captcha-container">
                 {{ captcha.captcha }}
                 <span id="captcha_status" class="status-text"></span>
             </div>
 
-
             {% if error %}
                 <span class="error-message">{{ error }}</span>
             {% endif %}
 
-            <!-- 登录按钮 -->
-            <input type="submit" value="登录">
+            <!-- 注册按钮 -->
+            <input type="submit" value="注册">
 
-            <!-- 注册引导 -->
-            <p>没有账号？ <a href="/user/register">注册</a></p>
+            <!-- 登录引导 -->
+            <p>已有账号？ <a href="/user/login">点击登录</a></p>
         </form>
     </div>
 </div>
-</body>
+
 <script>
     $(function(){
         // 点击验证码图片刷新功能
@@ -228,4 +225,5 @@
         });
     });
 </script>
+</body>
 </html>

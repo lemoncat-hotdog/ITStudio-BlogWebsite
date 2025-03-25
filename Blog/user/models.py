@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
+import time
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
 
@@ -13,7 +13,7 @@ sex = {
 }
 
 class BlogUser(User, models.Model):
-    nickname = models.CharField("昵称", max_length=50, default=f"OUCer_{timezone.now}", unique=True)
+    nickname = models.CharField("昵称", max_length=50, default=f"OUCer_{int(time.time())}", unique=True)
     avatar   = ProcessedImageField(verbose_name="头像", upload_to='avatars/%Y/%m/%d', default='avatars/default.png', processors=[ResizeToFill(160, 160)])
     info     = models.TextField("简介", blank=True, null=True)
     birthday = models.DateField("生日", null=True, blank=True)
