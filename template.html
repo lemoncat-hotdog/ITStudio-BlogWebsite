@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciallo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="background-gradient"></div>
+
+<header class="glass-effect">
+    <nav>
+        <div class="logo">网站<span>Logo</span></div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">按钮1</a></li>
+            <li><a href="#">按钮2</a></li>
+            <li><a href="#">按钮3</a></li>
+            <li><a href="#">按钮4</a></li>
+            <li><a href="#" id="loginBtn">登录/注册</a></li>
+        </ul>
+        <div class="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="profile glass-effect">
+        <div class="profile-image">
+            <img src="https://i.pravatar.cc/150?img=11" alt="头像">
+        </div>
+        <div class="profile-info">
+            <h1>网站标题</h1>
+            <p class="tagline">网站标语</p>
+            <p class="bio">网站简介</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fa  fa-warning"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="articles-header">
+        <h2>最新文章</h2>
+    </div>
+
+    <section class="articles">
+        <article class="article-card glass-effect">
+            <div class="article-image">
+                <img src="https://picsum.photos/600/400?random=1" alt="文章图片">
+            </div>
+            <div class="article-content">
+                <h3>文章标题</h3>
+                <p>文章摘要</p>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 日期</span>
+                    <span><i class="far fa-eye"></i> 1145</span>
+                    <span><i class="far fa-comment"></i> 14</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="article-card glass-effect">
+            <div class="article-image">
+                <img src="https://picsum.photos/600/400?random=2" alt="文章图片">
+            </div>
+            <div class="article-content">
+                <h3>文章标题</h3>
+                <p>文章摘要</p>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 日期</span>
+                    <span><i class="far fa-eye"></i> 1145</span>
+                    <span><i class="far fa-comment"></i> 14</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="article-card glass-effect">
+            <div class="article-image">
+                <img src="https://picsum.photos/600/400?random=3" alt="文章图片">
+            </div>
+            <div class="article-content">
+                <h3>文章标题</h3>
+                <p>文章摘要</p>
+                <div class="article-meta">
+                    <span><i class="far fa-calendar"></i> 日期</span>
+                    <span><i class="far fa-eye"></i> 1145</span>
+                    <span><i class="far fa-comment"></i> 14</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <div class="load-more">
+        <button class="load-more-btn">加载更多文章</button>
+    </div>
+</main>
+
+<footer class="glass-effect">
+    <div class="footer-content">
+        <div class="footer-logo">网站<span>Logo</span></div>
+        <p>版权信息</p>
+        <p>联系信息</p>
+    </div>
+</footer>
+
+<!-- 登录界面模态框 -->
+<div class="login-modal" id="loginModal">
+    <div class="login-container glass-effect">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">登录</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="用户名" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="密码" />
+                    </div>
+                    <input type="submit" value="登录" class="btn solid" />
+                </form>
+                <form action="#" class="sign-up-form">
+                    <h2 class="title">注册</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="用户名" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="电子邮箱" />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="signup-password" placeholder="密码" />
+                        <div class="password-strength">
+                            <div class="strength-bar"></div>
+                        </div>
+                    </div>
+                    <div class="password-tips">
+                        <div class="tip-item">
+                            <i class="fas fa-check"></i>
+                            <span>至少8个字符</span>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-check"></i>
+                            <span>包含大写字母</span>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-check"></i>
+                            <span>包含小写字母</span>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-check"></i>
+                            <span>包含数字</span>
+                        </div>
+                        <div class="tip-item">
+                            <i class="fas fa-check"></i>
+                            <span>包含特殊字符</span>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-key"></i>
+                        <input type="password" id="confirm-password" placeholder="确认密码" />
+                    </div>
+                    <div class="password-message" id="password-message"></div>
+                    <input type="submit" class="btn" value="注册" id="signup-btn" />
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>您是新用户?</h3>
+                    <button class="btn transparent" id="sign-up-btn">
+                        注册
+                    </button>
+                </div>
+                <img src="https://i.ibb.co/6HXL6q1/Register.png" class="image" alt="" />
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>已有账号?</h3>
+                    <p>
+                        Ciallo～(∠・ω< )⌒★
+                    </p>
+                    <button class="btn transparent" id="sign-in-btn">
+                        登录
+                    </button>
+                </div>
+                <img src="https://i.ibb.co/nP8H853/Login.png" class="image" alt="" />
+            </div>
+        </div>
+
+        <button class="close-modal">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 渐入效果
+        const faders = document.querySelectorAll('.fade-in');
+
+        // 页面加载后自动显示渐入效果
+        setTimeout(() => {
+            faders.forEach(fader => {
+                fader.classList.add('appear');
+            });
+        }, 100);
+
+        // 登录模态框功能
+        const loginBtn = document.getElementById('loginBtn');
+        const loginModal = document.getElementById('loginModal');
+        const closeModal = document.querySelector('.close-modal');
+        const signUpBtn = document.getElementById('sign-up-btn');
+        const signInBtn = document.getElementById('sign-in-btn');
+        const loginContainer = document.querySelector('.login-container');
+
+        // 打开登录模态框
+        loginBtn.addEventListener('click', () => {
+            loginModal.classList.add('open');
+        });
+
+        // 关闭登录模态框
+        closeModal.addEventListener('click', () => {
+            loginModal.classList.remove('open');
+        });
+
+        // 点击模态框外部关闭
+        loginModal.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.remove('open');
+            }
+        });
+
+        // 切换到注册界面
+        signUpBtn.addEventListener('click', () => {
+            loginContainer.classList.add('sign-up-mode');
+        });
+
+        // 切换到登录界面
+        signInBtn.addEventListener('click', () => {
+            loginContainer.classList.remove('sign-up-mode');
+        });
+
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // 密码验证功能
+        const password = document.getElementById('signup-password');
+        const confirmPassword = document.getElementById('confirm-password');
+        const passwordMessage = document.getElementById('password-message');
+        const signupBtn = document.getElementById('signup-btn');
+
+        // 验证密码匹配,不匹配则禁用注册按钮
+        function validatePassword() {
+            if(password.value != confirmPassword.value) {
+                passwordMessage.textContent = "两次输入的密码不一致";
+                passwordMessage.classList.remove('success');
+                signupBtn.disabled = true;
+                signupBtn.style.opacity = "0.7";
+                signupBtn.style.cursor = "not-allowed";
+                return false;
+            } else if(password.value && confirmPassword.value) {
+                passwordMessage.textContent = "密码匹配";
+                passwordMessage.classList.add('success');
+                signupBtn.disabled = false;
+                signupBtn.style.opacity = "1";
+                signupBtn.style.cursor = "pointer";
+                return true;
+            } else {
+                passwordMessage.textContent = "";
+                signupBtn.disabled = false;
+                signupBtn.style.opacity = "1";
+                signupBtn.style.cursor = "pointer";
+                return false;
+            }
+        }
+
+        // 监听密码输入
+        password.addEventListener('keyup', validatePassword);
+        confirmPassword.addEventListener('keyup', validatePassword);
+
+        // 提交前验证
+        document.querySelector('.sign-up-form').addEventListener('submit', function(e) {
+            if(!validatePassword()) {
+                e.preventDefault(); // 阻止表单提交
+            }
+        });
+    });
+</script>
+</body>
+</html>
